@@ -1,0 +1,23 @@
+" Enable syntax highlighting
+syntax on
+
+" Enable file type detection, plugins, and indentation
+filetype plugin indent on
+
+" Show line numbers
+set nu
+
+" Customize line number appearance (dark grey color)
+highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+
+" Set tab settings: 4 spaces per tab, use spaces instead of tabs
+set tabstop=4 shiftwidth=4 expandtab
+
+" Automatically indent new lines to match previous line
+set autoindent
+
+" Show invisible characters: $ for line endings, >- for tabs, ~ for trailing spaces
+:set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+
+" Visual mode mapping: '//' searches for the currently selected text
+vnoremap // y/<C-R>"<CR>
