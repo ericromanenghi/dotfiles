@@ -1,0 +1,11 @@
+[user]
+	email = eric.romanenghi@uber.com
+	name = Eric F. Romanenghi
+[pull]
+	rebase = true
+[init]
+	defaultBranch = main
+
+# Include machine-specific configuration
+[include]
+	path = ~/.gitconfig.local
