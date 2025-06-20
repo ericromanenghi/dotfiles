@@ -1,0 +1,20 @@
+---
+schema_version: 0
+region: netherlands
+shell: zsh
+
+tasks:
+  - name: install chezmoi
+    command: sh -c "$(curl -fsLS get.chezmoi.io)"
+    when: on-create
+    async: false
+    
+  - name: apply dotfiles
+    command: chezmoi init --apply https://github.com/ericromanenghi/dotfiles.git
+    when: on-create
+    async: false
+    
+  - name: update dotfiles
+    command: chezmoi update
+    when: on-restart
+    async: true
