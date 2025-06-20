@@ -9,7 +9,7 @@ source "${HOME}/.zgenom/zgenom.zsh"                   # Load zgenom plugin manag
 zgenom autoupdate                                      # Auto-update plugins
 if ! zgenom saved; then                               # If no saved configuration exists
   zgenom ohmyzsh                                       # Load Oh My Zsh framework
-  zgenom ohmyzsh themes/robbyrussell                   # Load robbyrussell theme
+  zgenom ohmyzsh themes/agnoster                       # Load agnoster theme
   zgenom save                                          # Save the configuration
 fi
 
