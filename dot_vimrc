@@ -19,5 +19,16 @@ set autoindent
 " Show invisible characters: $ for line endings, >- for tabs, ~ for trailing spaces
 :set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
+" Custom key mappings: shift home row (j→h, k→j, l→k, ;→l)
+nnoremap j h
+nnoremap k j
+nnoremap l k
+nnoremap ; l
+
+vnoremap j h
+vnoremap k j
+vnoremap l k
+vnoremap ; l
+
 " Visual mode mapping: '//' searches for the currently selected text
 vnoremap // y/<C-R>"<CR>
