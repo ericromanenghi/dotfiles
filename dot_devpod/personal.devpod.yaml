@@ -14,6 +14,11 @@ tasks:
     when: on-create
     async: false
     
+  - name: install claude
+    command: npm install -g @anthropic-ai/claude-code
+    when: on-create
+    async: false
+    
   - name: update dotfiles
     command: chezmoi update
     when: on-restart
