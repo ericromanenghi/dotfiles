@@ -4,6 +4,10 @@
 export VISUAL=vim                 # Sets vim as the visual editor
 export EDITOR="$VISUAL"          # Sets default editor to same as visual editor
 
+# Prompt Configuration
+# Hide username@hostname on local machine (not in devpods)
+[[ -z "$DEVPOD_NAME" ]] && export DEFAULT_USER="$USER"
+
 # Python Environment Management
 export PYENV_ROOT="$HOME/.pyenv"                        # Sets pyenv installation directory
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"  # Adds pyenv to PATH if it exists
