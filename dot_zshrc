@@ -10,6 +10,10 @@ zgenom autoupdate                                      # Auto-update plugins
 if ! zgenom saved; then                               # If no saved configuration exists
   zgenom ohmyzsh                                       # Load Oh My Zsh framework
   zgenom ohmyzsh themes/agnoster                       # Load agnoster theme
+
+  # plugins
+  zgenom ohmyzsh plugins/extract                       # universal uncompressing `extract <file>`
+
   zgenom save                                          # Save the configuration
 fi
 
@@ -20,3 +24,6 @@ fi
 # Load custom configuration
 source ~/.config/zsh/aliases.zsh
 source ~/.config/zsh/functions.zsh
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
