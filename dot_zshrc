@@ -25,5 +25,13 @@ fi
 source ~/.config/zsh/aliases.zsh
 source ~/.config/zsh/functions.zsh
 
+# fzf - Fuzzy Finder Integration
+# Adds key bindings: Ctrl+R (history), Ctrl+T (files), Alt+C (cd)
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if [ -d "$(brew --prefix 2>/dev/null)/opt/fzf/shell" ]; then
+  source "$(brew --prefix)/opt/fzf/shell/completion.zsh"
+  source "$(brew --prefix)/opt/fzf/shell/key-bindings.zsh"
+fi
+
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
