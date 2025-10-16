@@ -13,7 +13,7 @@ export PYENV_ROOT="$HOME/.pyenv"                        # Sets pyenv installatio
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"  # Adds pyenv to PATH if it exists
 
 # Java and Android Development Setup
-export JAVA_HOME="$(/usr/libexec/java_home -v17)"     # Sets Java 17 as JAVA_HOME
+export JAVA_HOME="$(/usr/libexec/java_home -v21)"     # Sets Java 17 as JAVA_HOME
 export ANDROID_HOME=~/android-sdk                      # Android SDK location
 export ANDROID_NDK=~/android-ndk                       # Android NDK location
 export ANDROID_NDK_HOME=~/android-ndk

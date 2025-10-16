@@ -9,6 +9,5 @@
 # Include machine-specific configuration
 [include]
 	path = ~/.gitconfig.local
-[credential "https://git.uberinternal.com"]
-	helper = 
-	helper = !arh auth git-credential
+[core]
+	fsmonitor = watchman v2
