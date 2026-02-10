@@ -14,6 +14,7 @@ if ! zgenom saved; then                               # If no saved configuratio
   # plugins
   zgenom ohmyzsh plugins/git                           # git aliases and functions
   zgenom ohmyzsh plugins/extract                       # universal uncompressing `extract <file>`
+  zgenom load jeffreytse/zsh-vi-mode                   # vim mode for command line editing
 
   zgenom save                                          # Save the configuration
 fi
