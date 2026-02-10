@@ -1,5 +1,14 @@
+" Vim-plug plugin manager
+call plug#begin('~/.vim/plugged')
+Plug 'udalov/kotlin-vim'
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+call plug#end()
+
 " Enable syntax highlighting
 syntax on
+
+" Set Catppuccin Mocha colorscheme
+colorscheme catppuccin_mocha
 
 " Enable file type detection, plugins, and indentation
 filetype plugin indent on
@@ -15,6 +24,15 @@ set tabstop=4 shiftwidth=4 expandtab
 
 " Automatically indent new lines to match previous line
 set autoindent
+
+" Enable smart indentation for programming languages
+set smartindent
+
+" Kotlin-specific indentation settings
+autocmd FileType kotlin setlocal shiftwidth=4 tabstop=4 expandtab
+autocmd FileType kotlin setlocal cindent
+autocmd FileType kotlin setlocal cinkeys-=0#
+autocmd FileType kotlin setlocal indentkeys-=0#
 
 " Show invisible characters: $ for line endings, >- for tabs, ~ for trailing spaces
 :set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<

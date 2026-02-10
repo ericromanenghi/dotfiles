@@ -1,5 +1,4 @@
 [user]
-	email = eric.romanenghi@uber.com
 	name = Eric F. Romanenghi
 [pull]
 	rebase = true
@@ -9,5 +8,3 @@
 # Include machine-specific configuration
 [include]
 	path = ~/.gitconfig.local
-[core]
-	fsmonitor = watchman v2
