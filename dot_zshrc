@@ -2,7 +2,7 @@
 source ~/.config/zsh/exports.zsh
 
 # Python Environment Initialization
-eval "$(pyenv init - zsh)"                             # Initializes pyenv for zsh
+command -v pyenv &>/dev/null && eval "$(pyenv init - zsh)"
 
 # Zsh Plugin Manager Setup
 source "${HOME}/.zgenom/zgenom.zsh"                   # Load zgenom plugin manager
@@ -38,6 +38,6 @@ fi
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # zoxide - smarter cd command
-eval "$(zoxide init zsh)"
+command -v zoxide &>/dev/null && eval "$(zoxide init zsh)"
 
 export PATH="$HOME/.local/bin:$PATH"
