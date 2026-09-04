@@ -44,19 +44,16 @@ command -v zoxide &>/dev/null && eval "$(zoxide init zsh)"
 
 export PATH="$HOME/.local/bin:$PATH"
 
-# Use a compact prompt in Codex's embedded terminal. Agnoster's block colors are
-# mapped through Codex's own ANSI palette and are difficult to read there.
-if [[ -n "${CODEX_SHELL:-}" ]]; then
-  autoload -Uz add-zsh-hook vcs_info
-  setopt prompt_subst
+# Use a compact prompt consistently across local and remote terminals.
+autoload -Uz add-zsh-hook vcs_info
+setopt prompt_subst
 
-  zstyle ':vcs_info:git:*' formats '%F{#a6e3a1}git:%b%f'
-  zstyle ':vcs_info:git:*' actionformats '%F{#a6e3a1}git:%b|%a%f'
+zstyle ':vcs_info:git:*' formats '%F{#a6e3a1}git:%b%f'
+zstyle ':vcs_info:git:*' actionformats '%F{#a6e3a1}git:%b|%a%f'
 
-  codex_prompt_precmd() {
-    vcs_info
-  }
-  add-zsh-hook precmd codex_prompt_precmd
+compact_prompt_precmd() {
+  vcs_info
+}
+add-zsh-hook precmd compact_prompt_precmd
 
-  PROMPT='%F{#89b4fa}%~%f${vcs_info_msg_0_:+ ${vcs_info_msg_0_}} %F{#cba6f7}❯%f '
-fi
+PROMPT='%F{#89b4fa}%~%f${vcs_info_msg_0_:+ ${vcs_info_msg_0_}} %F{#cba6f7}❯%f '
